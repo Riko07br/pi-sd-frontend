@@ -8,6 +8,10 @@
     @apply text-bzd-orange hover:text-bzd-orange-dark underline;
   }
 
+  .buzzard-link-footer {
+    @apply hover:text-gray-600 hover:underline;
+  }
+
   .buzzard-btn {
     @apply inline-flex items-center px-3 py-2 text-sm font-medium text-center text-bzd-white rounded-lg bg-bzd-orange hover:bg-bzd-orange-dark disabled:bg-bzd-gray disabled:cursor-not-allowed;
   }
@@ -18,5 +22,13 @@
 
   .buzzard-form-input{
     @apply bg-transparent text-bzd-orange-light border-2 border-bzd-orange rounded-lg h-12 p-2;
+  }
+
+  .hover-icon-grow {
+    @apply transition-transform duration-300 ease-in-out transform;
+  }
+
+  .hover-icon-grow:hover {
+    @apply scale-125;
   }
 }

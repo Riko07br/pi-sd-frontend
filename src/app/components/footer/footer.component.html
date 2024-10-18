@@ -1,66 +1,132 @@
-<div class="bg-bzd-gray py-2 px-10">
-  <div class="flex justify-between">
-    <a class="h-32" [routerLink]="['/']">
-      <img class="max-h-full" src="/images/buzzard_logo.png" alt="Logo" />
-    </a>
+<footer class="flex flex-wrap w-full overflow-hidden justify-between px-24 py-4 bg-bzd-gray">
 
-    <div class="flex gap-6">
-      <div class="flex flex-col text-nowrap">
-        <h5 class="text-xl">Informações</h5>
-        <a [routerLink]="['/landing']" class="buzzard-link">Buzzard Pix</a>
-        <a [routerLink]="['/about', 'investments']" class="buzzard-link">
+  <picture>
+    <img
+      class="w-32 h-32 max-w-full"
+      src="/images/buzzard_logo.png"
+      alt="Logo"
+    />
+  </picture>
+
+  <div>
+    <h1 class="text-2xl pb-4">Informações</h1>
+    <ul class="grid gap-1">
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/landing']">
+          Buzzard Pix
+        </a>
+      </li>
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/about', 'investments']">
           Sobre investimentos
         </a>
-      </div>
+      </li>
+    </ul>
+  </div>
 
-      <div class="flex flex-col text-nowrap">
-        <h5 class="text-xl">Painel</h5>
-        <a [routerLink]="['/']" class="buzzard-link">Início</a>
-        <a [routerLink]="['/profile']" class="buzzard-link">Perfil</a>
-        <a [routerLink]="['/investments']" class="buzzard-link">
-          Investimentos
-        </a>
-        <a [routerLink]="['/products']" class="buzzard-link">Produtos</a>
-      </div>
+  <div>
+    <h1 class="text-2xl pb-4">Painel</h1>
+    <ul class="grid gap-1">
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/']"
+          >Inicio</a
+        >
+      </li>
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/profile']"
+          >Perfil</a
+        >
+      </li>
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/investments']"
+          >Investimentos</a
+        >
+      </li>
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/products']"
+          >Produtos</a
+        >
+      </li>
+    </ul>
+  </div>
 
-      <div class="flex flex-col text-nowrap">
-        <h5 class="text-xl">Saldo</h5>
-        <a [routerLink]="['/balance', 'transfers']" class="buzzard-link">
-          Transferências
-        </a>
-        <a [routerLink]="['/balance', 'transfer']" class="buzzard-link">
-          Transferir
-        </a>
-        <a [routerLink]="['/balance', 'deposit']" class="buzzard-link">
-          Depositar
-        </a>
-      </div>
+  <div>
+    <h1 class="text-2xl pb-4">Saldo</h1>
+    <ul class="grid gap-1">
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/balance', 'transfers']"
+          >Transferências</a
+        >
+      </li>
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/balance', 'transfer']"
+          >Transferir</a
+        >
+      </li>
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/balance', 'deposit']"
+          >Depositar</a
+        >
+      </li>
+    </ul>
+  </div>
 
-      <div class="flex flex-col text-nowrap">
-        <h5 class="text-xl">Autenticação</h5>
-        <a [routerLink]="['/auth', 'login']" class="buzzard-link">Login</a>
-        <a [routerLink]="['/auth', 'register']" class="buzzard-link">
-          Criar conta
-        </a>
-      </div>
+  <div>
+    <h1 class="text-2xl pb-4">Autenticação</h1>
+    <ul class="grid gap-1">
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/auth', 'login']"
+          >Login</a
+        >
+      </li>
+      <li>
+        <a class="text-lg buzzard-link-footer" [routerLink]="['/auth', 'register']"
+          >Criar conta</a
+        >
+      </li>
+    </ul>
+  </div>
 
-      <div class="flex flex-col text-nowrap">
-        <h5 class="text-xl">Entre em contato</h5>
+  <div class="flex flex-col justify-center items-center gap-8 h-full">
+    <div>
+      <h1 class="text-2xl pb-4">Entre em contato</h1>
+      <ul class="flex gap-4">
+        <li>
+          <a href="https://www.facebook.com/"
+            ><img
+              class="hover-icon-grow"
+              src="/images/facebookIconFooter.svg"
+              alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="https://github.com/"
+            ><img
+              class="hover-icon-grow"
+              src="/images/githubIconFooter.svg"
+              alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/"
+            ><img
+              class="hover-icon-grow"
+              src="/images/linkedinIconFooter.svg"
+              alt=""
+          /></a>
+        </li>
+      </ul>
+    </div>
 
-        <div class="flex justify-between pt-2 px-2 text-3xl">
-          <a href="https://facebook.com" class="buzzard-link">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a href="https://linkedin.com" class="buzzard-link">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="#" class="buzzard-link">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
+    <div>
+      <h1 class="text-2xl">Fale com o suporte</h1>
+      <a class="text-lg font-bold buzzard-link-footer" href="./">(61) 3213 – 1313</a>
     </div>
   </div>
 
-  <p class="text-sm">Buzzard Pix© Alguns direitos reservados - 2024</p>
-</div>
+  <div class="mt-2 w-full">
+    <p class="text-base">BuzzardPIX © Alguns direitos reservados. 2024</p>
+  </div>
+
+
+</footer>
