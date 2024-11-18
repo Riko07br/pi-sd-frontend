@@ -1,95 +1,86 @@
-<section class="bg-gradient-to-r from-bzd-orange to-bzd-orange-light flex gap-40 justify-center h-full w-full">
-    <!-- <div>
-        <h1 class="text-white text-5xl font-bold my-10">Buzzard pix</h1>
-        <nav class="grid space-y-12">
-            <div class="flex justify-between items-center justify-items-center">
-                <a [routerLink]="['']" class="text-white grid justify-items-center justify-between w-1/2">
-                    <i class="fas fa-wallet text-7xl border-2 rounded-lg rounded-tr-none p-4"></i>
-                    <p class="text-lg">Carteira</p>
-                </a>
+<section
+  class="bg-gradient-to-r from-bzd-orange to-bzd-orange-light flex gap-40 justify-center h-full w-full"
+>
+  <div class="p-10">
+    <h1 class="text-white text-5xl font-bold mt-4 mb-10 text-center">
+      Buzzard PIX
+    </h1>
+    <nav class="grid grid-cols-2 gap-8">
+      <div class="flex flex-col items-center">
+        <a
+          [routerLink]="['/balance', 'transfers']"
+          class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200"
+        >
+          <i
+            class="fas fa-wallet text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"
+          ></i>
+          <p class="text-lg mt-2">Carteira</p>
+        </a>
+      </div>
 
-                <a [routerLink]="['']" class="text-white grid text-center justify-items-center w-1/2">
-                    <i class="fas fa-chart-line text-7xl border-2 rounded-lg  rounded-tr-none p-4"></i>
-                    <p class="text-lg text-nowrap">Meus Investimentos</p>
-                </a>
-            </div>
+      <div class="flex flex-col items-center">
+        <a
+          [routerLink]="['/investments']"
+          class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200"
+        >
+          <i
+            class="fas fa-chart-line text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"
+          ></i>
+          <p class="text-lg mt-2">Meus investimentos</p>
+        </a>
+      </div>
 
+      <div class="flex flex-col items-center">
+        <a
+          [routerLink]="['/balance', 'transfer']"
+          class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200"
+        >
+          <i
+            class="fas fa-exchange-alt text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"
+          ></i>
+          <p class="text-lg mt-2">Transferir saldo</p>
+        </a>
+      </div>
 
-            <div class="flex justify-between items-center justify-items-center">
-                <a [routerLink]="['']" class="text-white grid justify-items-center justify-between w-1/2">
-                    <i class="fas fa-exchange-alt text-7xl border-2 rounded-lg rounded-tr-none p-4"></i>
-                    <p class="text-lg">Tranferir Saldo</p>
-                </a>
+      <div class="flex flex-col items-center">
+        <a
+          [routerLink]="['/products']"
+          class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200"
+        >
+          <i
+            class="fas fa-piggy-bank text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"
+          ></i>
+          <p class="text-lg mt-2">Investimentos</p>
+        </a>
+      </div>
 
-                <a [routerLink]="['']" class="text-white grid text-center justify-items-center w-1/2">
-                    <i class="fas fa-piggy-bank text-7xl border-2 rounded-lg  rounded-tr-none p-4"></i>
-                    <p class="text-lg text-nowrap">Investimentos</p>
-                </a>
-            </div>
+      <div class="flex flex-col items-center">
+        <a
+          [routerLink]="['/profile']"
+          class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200"
+        >
+          <i
+            class="fas fa-user text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"
+          ></i>
+          <p class="text-lg mt-2">Meu perfil</p>
+        </a>
+      </div>
 
-            <div class="flex justify-between items-center justify-items-center">
-                <a [routerLink]="['']" class="text-white grid justify-items-center justify-between w-1/2">
-                    <i class="fas fa-user text-7xl border-2 rounded-lg rounded-tr-none p-4"></i>
-                    <p class="text-lg">Perfil</p>
-                </a>
+      <div class="flex flex-col items-center">
+        <a
+          [routerLink]="['/balance', 'transfers']"
+          class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200"
+        >
+          <i
+            class="fas fa-history text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"
+          ></i>
+          <p class="text-lg mt-2">Histórico de transações</p>
+        </a>
+      </div>
+    </nav>
+  </div>
 
-                <a [routerLink]="['']" class="text-white grid text-center justify-items-center w-1/2">
-                    <i class="fas fa-history text-7xl border-2 rounded-lg  rounded-tr-none p-4"></i>
-                    <p class="text-lg text-nowrap">Histórico de transações</p>
-                </a>
-            </div>
-
-        </nav>
-    </div> -->
-
-    <div class="p-10">
-        <h1 class="text-white text-5xl font-bold mt-4 mb-10 text-center">Buzzard PIX</h1>
-        <nav class="grid grid-cols-2 gap-8">
-            <div class="flex flex-col items-center">
-                <a [routerLink]="['/balance', 'transfers']" class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200">
-                    <i class="fas fa-wallet text-7xl border-2 border-white rounded-lg rounded-tr-none p-4  hover:border-gray-200"></i>
-                    <p class="text-lg mt-2">Carteira</p>
-                </a>
-            </div>
-    
-            <div class="flex flex-col items-center">
-                <a [routerLink]="['/investments']" class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200">
-                    <i class="fas fa-chart-line text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"></i>
-                    <p class="text-lg mt-2">Meus investimentos</p>
-                </a>
-            </div>
-    
-            <div class="flex flex-col items-center">
-                <a [routerLink]="['/balance', 'transfer']" class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200">
-                    <i class="fas fa-exchange-alt text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"></i>
-                    <p class="text-lg mt-2">Transferir saldo</p>
-                </a>
-            </div>
-    
-            <div class="flex flex-col items-center">
-                <a [routerLink]="['/products']" class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200">
-                    <i class="fas fa-piggy-bank text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"></i>
-                    <p class="text-lg mt-2">Investimentos</p>
-                </a>
-            </div>
-    
-            <div class="flex flex-col items-center">
-                <a [routerLink]="['/profile']" class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200">
-                    <i class="fas fa-user text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"></i>
-                    <p class="text-lg mt-2">Meu perfil</p>
-                </a>
-            </div>
-    
-            <div class="flex flex-col items-center">
-                <a [routerLink]="['/balance', 'transfers']" class="text-white grid justify-items-center w-full transition-transform duration-300 ease-in-out transform hover:scale-110 hover:text-gray-200">
-                    <i class="fas fa-history text-7xl border-2 border-white rounded-lg rounded-tr-none p-4 hover:border-gray-200"></i>
-                    <p class="text-lg mt-2">Histórico de transações</p>
-                </a>
-            </div>
-        </nav>
-    </div>
-
-    <picture>
-        <img src="/images/bzd-landing-cover.png" alt="" />
-    </picture>
+  <picture>
+    <img src="/images/bzd-landing-cover.png" alt="" />
+  </picture>
 </section>

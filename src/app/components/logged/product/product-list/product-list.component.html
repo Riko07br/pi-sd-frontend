@@ -1,39 +1,46 @@
-<div class="min-h-screen bg-white px-24">
-  <div class="w-full">
-    <h1 class="text-4xl font-black text-bzd-orange">Lista de produtos</h1>
+<section class="px-24 mb-4 flex flex-col h-full">
+  <div class="flex-1">
+    <h1 class="text-4xl font-black text-bzd-orange">Produtos</h1>
     <div class="h-0.5 bg-bzd-orange w-full mb-12"></div>
-  </div>
 
-  <div class="grid grid-cols-2 gap-3">
-    @for (product of productPageable.content; track $index) {
-
-    <a
-      [routerLink]="['/products', product.id]"
-      class="p-3 bg-transparent border-2 text-gray-900 rounded-lg border-bzd-orange hover:border-bzd-orange-dark"
-    >
-      <div class="flex justify-between">
-        <div class="tracking-tight">
-          <h5 class="text-l">Tipo: Buzzard Pix</h5>
-          <h5 class="text-2xl font-bold">
+    <div class="flex flex-col gap-2 text-gray-500">
+      @for (product of productPageable.content; track $index) {
+      <div class="w-full p-3 border-2 rounded-lg border-bzd-orange">
+        <div class="">
+          <div class="flex justify-between">
+            <p class="text-sm font-black text-bzd-orange">BUZZARD PIX</p>
+            <div class="font-normal self-start text-nowrap">
+              Rende {{ product.dailyYield * 100 }}% por dia
+            </div>
+          </div>
+          <p class="text-xl font-semibold text-bzd-orange-dark">
             {{ product.name }}
-          </h5>
+          </p>
         </div>
 
-        <p class="font-normal self-start text-nowrap">
-          Rende {{ product.dailyYield * 100 }}% por dia
-        </p>
-      </div>
+        <div class="h-0.5 bg-bzd-orange w-full mb-2"></div>
 
-      <div class="my-3 h-0.5 bg-bzd-orange w-full"></div>
+        <div class="flex justify-between items-end">
+          <div>
+            <span class="">Resgate em</span>
+            <span class="text-bzd-orange text-2xl"> 1 dia útil </span>
+          </div>
 
-      <div class="flex justify-between">
-        <div>
-          <p class="text-sm">Resgate em</p>
-          <p class="text-bzd-orange">1 dia útil</p>
+          <div class="w-fit flex gap-3">
+            <a
+              [routerLink]="['/products', product.id]"
+              class="bzd-btn-primary px-3"
+            >
+              Ver produto
+            </a>
+          </div>
         </div>
       </div>
-    </a>
-
-    }
+      }
+    </div>
   </div>
-</div>
+
+  <div class="self-end">
+    <app-pagination [pageParams]="{ currentPage, totalPages }"></app-pagination>
+  </div>
+</section>
