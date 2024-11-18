@@ -5,6 +5,7 @@ import { TransactionResponse } from '../models/transaction-response.model';
 import { HttpAppService } from './http-app.service';
 import { TransactionRequest } from '../models/transaction-request.model';
 import { Pageable } from '../models/pageable.model';
+import { Pagination } from '../models/pagination.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,9 +17,16 @@ export class TransactionService extends HttpAppService {
     super();
   }
 
-  public findAll(): Observable<Pageable<TransactionResponse>> {
+  public findAll(
+    pagination: Pagination
+  ): Observable<Pageable<TransactionResponse>> {
     return this.httpClient.get<Pageable<TransactionResponse>>(
-      this.getEndpoint()
+      this.getEndpoint(),
+      {
+        params: {
+          ...pagination,
+        },
+      }
     );
   }
 

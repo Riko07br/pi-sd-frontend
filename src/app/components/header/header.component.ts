@@ -1,7 +1,12 @@
 import { DecimalPipe } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { Subscription } from 'rxjs';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterLink,
+} from '@angular/router';
+import { filter, Subscription } from 'rxjs';
 import { JwtUser } from '../../models/jwt-user.model';
 import { AuthService } from '../../services/auth.service';
 import { BalanceService } from '../../services/balance.service';
@@ -16,17 +21,26 @@ import { BalanceService } from '../../services/balance.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   user: JwtUser;
   balance: number;
+  hideNav: boolean = true;
 
   private userSubscription: Subscription;
+  private urlChangeSubscription: Subscription;
   private balanceSubscription: Subscription;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private balanceService: BalanceService
+    private balanceService: BalanceService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
+    this.urlChangeSubscription = this.router.events
+      .pipe(filter((event: any) => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        this.hideNav = event.url == '/';
+      });
+
     this.balanceSubscription = this.balanceService.balance$.subscribe(
       (balance) => {
         this.balance = balance;
@@ -41,6 +55,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.userSubscription?.unsubscribe();
     this.balanceSubscription?.unsubscribe();
+    this.urlChangeSubscription.unsubscribe();
   }
 
   onLogout() {

@@ -5,22 +5,17 @@
     <div>
       <ul class="flex items-center gap-4">
         <li>
-          <img
-            class="w-20 h-20 max-w-full"
-            src="/images/bzd-main-logo.png"
-            alt="Logo"
-          />
-        </li>
-
-        @if (user != null) {
-        <li>
-          <a
-            class="text-white font-poppins text-2-m hover:text-gray-200 hover:underline"
-            [routerLink]="['/']"
-          >
-            Inicio
+          <a [routerLink]="user != null ? ['/'] : ['/landing']">
+            <img
+              class="w-20 h-20 max-w-full"
+              src="/images/bzd-main-logo.png"
+              alt="Logo"
+            />
           </a>
         </li>
+
+        @if (user != null && !hideNav) {
+
         <li>
           <a
             class="text-white font-poppins text-2-m hover:text-gray-200 hover:underline"
@@ -32,9 +27,25 @@
         <li>
           <a
             class="text-white font-poppins text-2-m hover:text-gray-200 hover:underline"
-            [routerLink]="['/balance', 'transfers']"
+            [routerLink]="['/products']"
           >
-            Transações
+            Produtos
+          </a>
+        </li>
+        <li>
+          <a
+            class="text-white font-poppins text-2-m hover:text-gray-200 hover:underline"
+            [routerLink]="['/balance', 'transfer']"
+          >
+            Transferir
+          </a>
+        </li>
+        <li>
+          <a
+            class="text-white font-poppins text-2-m hover:text-gray-200 hover:underline"
+            [routerLink]="['/balance', 'deposit']"
+          >
+            Depositar
           </a>
         </li>
         <li>
