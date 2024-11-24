@@ -37,4 +37,8 @@
     @apply bg-transparent text-bzd-orange-light border-2 border-bzd-orange rounded-lg h-12 p-2;
   }
 
+  .buzzard-title{
+    @apply text-5xl text-white font-semibold pl-4 py-3 bg-bzd-orange;
+  }
+
 }
