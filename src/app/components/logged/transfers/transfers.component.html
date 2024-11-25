@@ -1,9 +1,8 @@
-<section class="px-24 mb-4 flex flex-col h-full">
-  <div class="w-full">
-    <h1 class="text-4xl font-black text-bzd-orange">Histórico</h1>
-    <div class="h-0.5 bg-bzd-orange w-full mb-12"></div>
+<section>
+  <div class="w-full bg-bzd-orange">
+    <h1 class="buzzard-title">Histórico de transação</h1>
   </div>
-
+<div class="px-24 mb-4 flex flex-col h-full mt-4">
   <div class="w-full">
     @for (transaction of transactionPageable?.content; track $index) {
     <div
@@ -65,4 +64,6 @@
   <div class="self-end">
     <app-pagination [pageParams]="{ currentPage, totalPages }"></app-pagination>
   </div>
+</div>
+  
 </section>

@@ -1,60 +1,64 @@
-<section class="px-24 mb-4 flex flex-col h-full">
-  <div class="flex-1">
-    <h1 class="text-4xl font-black text-bzd-orange">Investimentos</h1>
-    <div class="h-0.5 bg-bzd-orange w-full mb-12"></div>
+<section>
+  
+    <h1 class="buzzard-title">Investimentos</h1>
 
-    <div class="flex flex-col gap-2 text-gray-500">
-      @for (investment of investmentPageable.content; track $index) {
-      <div class="w-full p-3 border-2 rounded-lg border-bzd-orange">
-        <div class="">
-          <div class="flex justify-between">
-            <p class="text-sm font-black text-bzd-orange">BUZZARD PIX</p>
-            <div class="font-normal self-start text-nowrap">
-              {{ investment.isSold ? "Vendido" : "Comprado" }} em
-              {{ investment.buyTime | date : "HH:mm" }} -
-              {{ investment.buyTime | date : "dd/MM/yy" }}
+  <div class="px-24 mb-4 flex flex-col h-full mt-4">
+    <div class="flex-1">
+      <div class="flex flex-col gap-2 text-gray-500">
+        @for (investment of investmentPageable.content; track $index) {
+        <div class="w-full p-3 border-2 rounded-lg border-bzd-orange">
+          <div class="">
+            <div class="flex justify-between">
+              <p class="text-sm font-black text-bzd-orange">BUZZARD PIX</p>
+              <div class="font-normal self-start text-nowrap">
+                {{ investment.isSold ? "Vendido" : "Comprado" }} em
+                {{ investment.buyTime | date : "HH:mm" }} -
+                {{ investment.buyTime | date : "dd/MM/yy" }}
+              </div>
+            </div>
+            <p class="text-xl font-semibold text-bzd-orange-dark">
+              {{ investment.product.name }}
+            </p>
+          </div>
+  
+          <div class="h-0.5 bg-bzd-orange w-full mb-2"></div>
+  
+          <div class="flex justify-between items-end">
+            <div>
+              <span class="">Investido</span>
+              <span class="text-bzd-orange text-2xl">
+                R$ {{ investment.buyPrice | number : "1.2-2" }}
+              </span>
+            </div>
+            <div>
+              <span class="">
+                {{ investment.isSold ? "Valor de venda" : "Rendimento" }}
+              </span>
+              <span class="text-bzd-orange font-bold text-2xl">
+                R$ {{ investment.sellPrice | number : "1.2-2" }}
+              </span>
+            </div>
+            <div class="w-fit flex gap-3">
+              <a [routerLink]="[investment.id]" class="bzd-btn-primary px-3">
+                Detalhes
+              </a>
+              <a
+                [routerLink]="['/products', investment.product.id]"
+                class="bzd-btn-secondary px-3"
+              >
+                Ver produto
+              </a>
             </div>
           </div>
-          <p class="text-xl font-semibold text-bzd-orange-dark">
-            {{ investment.product.name }}
-          </p>
         </div>
-
-        <div class="h-0.5 bg-bzd-orange w-full mb-2"></div>
-
-        <div class="flex justify-between items-end">
-          <div>
-            <span class="">Investido</span>
-            <span class="text-bzd-orange text-2xl">
-              R$ {{ investment.buyPrice | number : "1.2-2" }}
-            </span>
-          </div>
-          <div>
-            <span class="">
-              {{ investment.isSold ? "Valor de venda" : "Rendimento" }}
-            </span>
-            <span class="text-bzd-orange font-bold text-2xl">
-              R$ {{ investment.sellPrice | number : "1.2-2" }}
-            </span>
-          </div>
-          <div class="w-fit flex gap-3">
-            <a [routerLink]="[investment.id]" class="bzd-btn-primary px-3">
-              Detalhes
-            </a>
-            <a
-              [routerLink]="['/products', investment.product.id]"
-              class="bzd-btn-secondary px-3"
-            >
-              Ver produto
-            </a>
-          </div>
-        </div>
+        }
       </div>
-      }
+    </div>
+  
+    <div class="self-end">
+      <app-pagination [pageParams]="{ currentPage, totalPages }"></app-pagination>
     </div>
   </div>
 
-  <div class="self-end">
-    <app-pagination [pageParams]="{ currentPage, totalPages }"></app-pagination>
-  </div>
+  
 </section>
