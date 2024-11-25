@@ -1,71 +1,74 @@
 <section>
   <div class="w-full bg-bzd-orange">
-    <h1 class="buzzard-title">Histórico de transação</h1>
+    <h1 class="buzzard-title">Histórico de transações</h1>
   </div>
-<div class="px-24 mb-4 flex flex-col h-full mt-4">
-  <div class="w-full">
-    @for (transaction of transactionPageable?.content; track $index) {
-    <div
-      class="bg-white rounded-lg pr-5 mb-4 border-t-4 border-bzd-orange shadow-sm"
-    >
-      <div class="m-4 flex flex-col w-full">
-        <div class="grid grid-cols-4 gap-3">
-          <div>
-            <p class="text-bzd-orange text-sm mb-1">Data e Hora</p>
-            <p class="text-gray-700">
-              {{ transaction.timestamp | date : "dd/MM/yyyy - HH:mm" }}
-            </p>
-          </div>
-          <div>
-            <p class="text-bzd-orange text-sm mb-1">Valor</p>
-            <p class="text-gray-700">
-              R$ {{ transaction.value | number : "1.2-2" }}
-            </p>
-          </div>
-          <div>
-            <p class="text-bzd-orange text-sm mb-1">Operação</p>
-            <p class="text-gray-700">
-              {{ transaction.type === "Saque" ? "↓" : "↑" }}
-              {{ transaction.type }}
-            </p>
-          </div>
-          <div>
-            <button
-              type="button"
-              class="bzd-btn-primary"
-              (click)="onSelectTransaction(transaction)"
-            >
-              Detalhes
-            </button>
+  <div class="px-24 mb-4 flex flex-col h-full mt-4">
+    <div class="w-full">
+      @for (transaction of transactionPageable?.content; track $index) {
+      <div
+        class="bg-white rounded-lg pr-5 mb-4 border-t-4 border-bzd-orange shadow-sm"
+      >
+        <div class="m-4 flex flex-col w-full">
+          <div class="grid grid-cols-4 gap-3">
+            <div>
+              <p class="text-bzd-orange text-sm mb-1">Data e Hora</p>
+              <p class="text-gray-700">
+                {{ transaction.timestamp | date : "dd/MM/yyyy - HH:mm" }}
+              </p>
+            </div>
+            <div>
+              <p class="text-bzd-orange text-sm mb-1">Valor</p>
+              <p class="text-gray-700">
+                R$ {{ transaction.value | number : "1.2-2" }}
+              </p>
+            </div>
+            <div>
+              <p class="text-bzd-orange text-sm mb-1">Operação</p>
+              <p class="text-gray-700">
+                {{ transaction.type === "Saque" ? "↓" : "↑" }}
+                {{ transaction.type }}
+              </p>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="bzd-btn-primary"
+                (click)="onSelectTransaction(transaction)"
+              >
+                Detalhes
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      }
+    </div>
+
+    @if(selectedTransaction){
+    <div
+      class="w-96 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-bzd-gray rounded-xl"
+    >
+      <div class="flex justify-end p-1">
+        <button
+          type="button"
+          class="bzd-btn-primary w-fit"
+          (click)="onCloseTransaction()"
+        >
+          X
+        </button>
+      </div>
+      <div class="px-4 pb-4">
+        <app-transfer-detail
+          [transaction]="selectedTransaction"
+        ></app-transfer-detail>
+      </div>
     </div>
     }
-  </div>
 
-  @if(selectedTransaction){
-  <div
-    class="p-2 w-1/4 h-1/2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-bzd-gray rounded-xl"
-  >
-  <div class="flex justify-end px-1">
-    <button
-      type="button"
-      class="rounded-full bg-bzd-orange p-2"
-      (click)="onCloseTransaction()"
-    >
-      X
-    </button>
+    <div class="self-end">
+      <app-pagination
+        [pageParams]="{ currentPage, totalPages }"
+      ></app-pagination>
+    </div>
   </div>
-    <app-transfer-detail
-      [transaction]="selectedTransaction"
-    ></app-transfer-detail>
-  </div>
-  }
-
-  <div class="self-end">
-    <app-pagination [pageParams]="{ currentPage, totalPages }"></app-pagination>
-  </div>
-</div>
-  
 </section>

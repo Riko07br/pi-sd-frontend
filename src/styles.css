@@ -4,19 +4,19 @@
 @tailwind utilities;
 
 @layer components {
-  .bzd-btn-primary{
+  .bzd-btn-primary {
     @apply flex justify-center w-full bg-bzd-orange hover:bg-bzd-orange-dark text-white font-bold p-2 rounded-lg text-nowrap items-center disabled:bg-bzd-gray disabled:cursor-not-allowed;
-  }  
+  }
 
-  .bzd-btn-secondary{
+  .bzd-btn-secondary {
     @apply flex justify-center w-full border border-bzd-orange hover:border-bzd-orange-dark text-bzd-orange hover:text-bzd-orange-dark font-bold p-2 rounded-lg text-nowrap items-center disabled:cursor-not-allowed disabled:border-bzd-gray;
   }
 
-  .bzd-form-input{
+  .bzd-form-input {
     @apply w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-bzd-orange;
   }
 
-  .bzd-form-label{
+  .bzd-form-label {
     @apply block text-bzd-orange font-semibold mb-1;
   }
 
@@ -29,16 +29,15 @@
     @apply inline-flex items-center px-3 py-2 text-sm font-medium text-center text-bzd-white rounded-lg bg-bzd-orange hover:bg-bzd-orange-dark disabled:bg-bzd-gray disabled:cursor-not-allowed;
   }
 
-  .buzzard-form-label{
+  .buzzard-form-label {
     @apply text-bzd-gray;
   }
 
-  .buzzard-form-input{
+  .buzzard-form-input {
     @apply bg-transparent text-bzd-orange-light border-2 border-bzd-orange rounded-lg h-12 p-2;
   }
 
-  .buzzard-title{
-    @apply text-5xl text-white font-semibold pl-4 py-3 bg-bzd-orange;
+  .buzzard-title {
+    @apply text-5xl text-white font-semibold pl-24 py-3 bg-bzd-orange;
   }
-
 }

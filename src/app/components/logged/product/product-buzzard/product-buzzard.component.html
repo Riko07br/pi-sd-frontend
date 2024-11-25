@@ -4,24 +4,21 @@
 </div>
 } @else{
 <section class="bg-bzd-orange flex justify-between pt-8">
-  <div class="w-1/2 text-white pl-40">
+  <div class="w-1/2 text-white pl-40 text-xl">
     <h1 class="text-5xl py-3">
       O que é
       <span class="text-nowrap font-semibold">{{ product.name }}</span>
     </h1>
-    <p class="text-xl py-2">
-      É um investimento de alto rendimento diário de
-      <span class="text-black font-semibold">
-        {{ product.dailyYield * 100 }}%
-      </span>
-      , aproveitando o sistema Pix para realizar transações ágeis e seguras.
-      <span class="text-black font-semibold">
-        Com valor mínimo de investimento de R$ 100
-      </span>
-      , essa modalidade permite que qualquer pessoa participe e tenha a chance
-      de multiplicar seus ganhos rapidamente. Além disso, oferece a vantagem de
-      resgate em apenas
-      <span class="text-black font-semibold">{{ product.description }}</span>
+    <p class="">
+      <span class="font-semibold">{{ product.description }}</span>
+    </p>
+    <p class="">
+      - Rendimento diário:
+      <span class="font-semibold"> {{ product.dailyYield * 100 }}% </span>
+    </p>
+    <p class="pb-2">
+      - Id do produto:
+      <span class="font-semibold"> {{ product.id }}</span>
     </p>
   </div>
   <div class="">

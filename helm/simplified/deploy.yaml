@@ -16,5 +16,5 @@ spec:
     spec:
       containers:
         - name: pi-sd-frontend
-          image: "riko07/pi-sd-frontend:0.5.2-kubernetes"
+          image: "riko07/pi-sd-frontend:0.7.0-kubernetes"
           imagePullPolicy: IfNotPresent

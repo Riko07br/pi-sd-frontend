@@ -1,19 +1,37 @@
-<div class=" flex flex-col">
-    <div class="flex justify-center">
-        <img src="./images/bzd-transfer.png" alt="" class="" />
-    </div>
-    <p class="flex justify-center font-bold text-2xl">COMPROVANTE DE {{ transaction.type }}</p>
-    <p class="flex justify-center font-bold text-3xl">R${{ transaction.value | number : "1.2-2" }}</p>
+<div class="flex flex-col">
+  <div class="flex justify-center">
+    <img src="./images/bzd-main-logo.png" alt="" class="w-32" />
+  </div>
+  <p class="flex justify-center font-bold text-2xl">Valor</p>
+  <p class="flex justify-center font-bold text-3xl">
+    R$ {{ transaction.value | number : "1.2-2" }}
+  </p>
 </div>
 
 <div class="pt-6">
-    <h1 class="font-bold text-xl font-poppins">Sobre a transação</h1>
-    <p class=" flex justify-between">Data da transação <span class="">{{ transaction.timestamp | date : "dd/MM/yy" }}</span></p>
-    <p class=" flex justify-between">Id da transação <span>{{ transaction.id }}</span></p>
+  <h1 class="font-bold text-xl font-poppins">Sobre a transação</h1>
+  <p class="flex justify-between">
+    Id da transação <span>{{ transaction.id }}</span>
+  </p>
+  <p class="flex justify-between">
+    Tipo <span>{{ transaction.type }}</span>
+  </p>
+  <p class="flex justify-between">
+    Data da transação
+    <span class="">{{ transaction.timestamp | date : "dd/MM/yy" }}</span>
+  </p>
+  <p class="flex justify-between">
+    Hora da transação
+    <span class="">{{ transaction.timestamp | date : "HH:mm:ss" }}</span>
+  </p>
 </div>
 
 <div class="pt-6">
-    <h1 class="font-bold text-xl font-poppins">Origem</h1>
-    <p class=" flex justify-between">Nome<span>Caetano</span></p>
-    <p class=" flex justify-between">CPF/CNPJ <span>123,456,789-10</span></p>
+  <h1 class="font-bold text-xl font-poppins">Operador</h1>
+  <p class="flex justify-between">
+    Nome <span>{{ account.name }}</span>
+  </p>
+  <p class="flex justify-between">
+    Documento <span>{{ account.document }}</span>
+  </p>
 </div>
